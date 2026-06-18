@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Georgetown Auto Service offers oil changes, brake repair, engine diagnostics, tire services, A/C repair, and more in Alexandria, VA and Washington DC." />
+  <title>Services | Georgetown Auto Service</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="navbar">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <div class="logo-mark">G</div>
+        <div class="logo-text-wrap">
+          <div class="logo-name">Georgetown <em>Auto</em></div>
+          <div class="logo-sub">Auto Service</div>
+        </div>
+      </a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="services.html" class="active">Services</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="nav-right">
+        <a href="tel:2029653123" class="nav-phone">
+          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6.08 6.08l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          (202) 965-3123
+        </a>
+        <a href="contact.html" class="btn btn-primary nav-cta-btn">Book Online</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-nav" id="mobile-nav">
+  <a href="index.html">Home</a>
+  <a href="services.html">Services</a>
+  <a href="about.html">About Us</a>
+  <a href="contact.html">Contact</a>
+  <a href="contact.html" class="btn btn-primary">Book Online</a>
+</div>
+
+<!-- PAGE HEADER -->
+<header class="page-header">
+  <div class="container">
+    <span class="eyebrow" style="color:rgba(255,255,255,0.4)">What We Offer</span>
+    <h1>Our Services</h1>
+    <p>Comprehensive automotive care for all makes and models. If your car needs it, we do it.</p>
+  </div>
+</header>
+
+<!-- SERVICES GRID -->
+<section class="services-all">
+  <div class="container">
+    <div class="services-all-grid">
+
+      <div class="svc-full">
+        <div class="svc-icon">
+          <!-- Oil drop -->
+          <svg viewBox="0 0 24 24"><path d="M12 2l7 10a7 7 0 1 1-14 0z"/></svg>
+        </div>
+        <h3>Oil Change &amp; Lube</h3>
+        <p>Conventional, synthetic, and high-mileage oil changes. We check and top off all fluids, inspect filters, and make sure your engine is running clean between services.</p>
+      </div>
+
+      <div class="svc-full">
+        <div class="svc-icon">
+          <!-- Shield -->
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3>Brake Repair &amp; Replacement</h3>
+        <p>Full brake system inspections, pad and shoe replacement, rotor resurfacing or replacement, brake fluid flushes, and caliper service. We keep you stopping safely.</p>
+      </div>
+
+      <div class="svc-full">
+        <div class="svc-icon">
+          <!-- Wrench -->
+          <svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+        </div>
+        <h3>Engine Diagnostics &amp; Repair</h3>
+        <p>Check engine light, misfires, rough idling, or power loss — we run full computer diagnostics and inspect the root cause before we touch anything. No guesswork.</p>
+      </div>
+
+      <div class="svc-full">
+        <div class="svc-icon">
+          <!-- Circle (tire) -->
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg>
+        </div>
+        <h3>Tire Services</h3>
+        <p>Tire rotation, balancing, mounting, and flat repair. We also help you choose the right replacement tires for your vehicle, budget, and driving needs.</p>
+      </div>
+
+      <div class="svc-full">
+        <div class="svc-icon">
+          <!-- Settings/gear -->
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+        </div>
+        <h3>Transmission Service</h3>
+        <p>Fluid changes, filter replacements, and full transmission diagnostics. We handle automatic and manual transmissions on most domestic and foreign makes.</p>
+      </div>
+
+      <div class="svc-full">
+        <div class="svc-icon">
+          <!-- Wind / A/C -->
+          <svg viewBox="0 0 24 24"><path d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2"/></svg>
+        </div>
+        <h3>A/C &amp; Heating</h3>
+        <p>Refrigerant recharge, compressor repair, evaporator and condenser service, and heater core replacement. Stay comfortable year-round.</p>
+      </div>
+
+      <div class="svc-full">
+        <div class="svc-icon">
+          <!-- Navigation/steering -->
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+        </div>
+        <h3>Suspension &amp; Steering</h3>
+        <p>Shocks, struts, control arms, tie rods, power steering service, and wheel alignment. If your ride feels off, we'll find it and fix it.</p>
+      </div>
+
+      <div class="svc-full">
+        <div class="svc-icon">
+          <!-- Zap / electrical -->
+          <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        </div>
+        <h3>Battery &amp; Electrical</h3>
+        <p>Battery testing and replacement, alternator and starter service, charging system diagnostics, and electrical troubleshooting for warning lights and accessories.</p>
+      </div>
+
+      <div class="svc-full">
+        <div class="svc-icon">
+          <!-- Clipboard / inspection -->
+          <svg viewBox="0 0 24 24"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="13" y2="16"/></svg>
+        </div>
+        <h3>Pre-Purchase Inspection</h3>
+        <p>Thinking about buying a used car? We perform a comprehensive 50-point inspection so you know exactly what you're getting before you sign anything.</p>
+      </div>
+
+      <div class="svc-full">
+        <div class="svc-icon">
+          <!-- Badge check / emissions -->
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+        </div>
+        <h3>State Inspection &amp; Emissions</h3>
+        <p>Virginia state safety inspections and emissions testing performed on-site. Fast, convenient, and done right so you pass the first time.</p>
+      </div>
+
+      <div class="svc-full">
+        <div class="svc-icon">
+          <!-- Align / alignment -->
+          <svg viewBox="0 0 24 24"><line x1="12" y1="2" x2="12" y2="22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </div>
+        <h3>Wheel Alignment</h3>
+        <p>Proper alignment extends tire life, improves fuel economy, and keeps your car tracking straight. We use modern equipment for precise results.</p>
+      </div>
+
+      <div class="svc-full">
+        <div class="svc-icon">
+          <!-- Exhaust / pipe -->
+          <svg viewBox="0 0 24 24"><path d="M3 3h18v4H3z"/><path d="M3 7v10a2 2 0 0 0 2 2h4"/><path d="M14 9v8a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2V9"/></svg>
+        </div>
+        <h3>Exhaust &amp; Muffler</h3>
+        <p>Muffler replacement, catalytic converter service, exhaust leak repair, and full system inspections to keep your car quiet and emissions compliant.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="cta-banner">
+  <div class="container">
+    <h2>Not Sure What Your Car Needs?</h2>
+    <p>Bring it in or give us a call. We'll diagnose the issue and give you a straight answer — no pressure.</p>
+    <div class="cta-actions">
+      <a href="contact.html" class="btn btn-white btn-lg">Schedule a Visit</a>
+      <a href="tel:2029653123" class="btn btn-outline-white btn-lg">(202) 965-3123</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <span class="logo-text">Georgetown <em>Auto</em></span>
+        <p>Family-owned automotive service proudly serving Alexandria and the greater Washington DC area since 2003.</p>
+        <div class="footer-social">
+          <a href="https://www.facebook.com" aria-label="Facebook" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg>
+          </a>
+          <a href="https://www.instagram.com" aria-label="Instagram" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a href="https://www.yelp.com" aria-label="Yelp" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Navigation</h5>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Services</h5>
+        <ul>
+          <li><a href="services.html">Oil Change</a></li>
+          <li><a href="services.html">Brake Repair</a></li>
+          <li><a href="services.html">Engine Repair</a></li>
+          <li><a href="services.html">Tire Services</a></li>
+          <li><a href="services.html">All Services</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <p>
+          418 E Raymond Ave<br />
+          Alexandria, VA 22301<br /><br />
+          <a href="tel:2029653123">DC: (202) 965-3123</a><br />
+          <a href="tel:5719704010">VA: (571) 970-4010</a><br /><br />
+          Mon–Fri: 7:00am – 6:00pm<br />
+          Sat–Sun: 9:00am – 3:00pm
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2024 Georgetown Auto Service LLC. All rights reserved.</p>
+      <p>418 E Raymond Ave, Alexandria, VA 22301</p>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

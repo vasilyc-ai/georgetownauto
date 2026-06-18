@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Georgetown Auto Service | Auto Repair Washington DC</title>
+  <meta name="description" content="Georgetown Auto Service offers expert auto repair in Washington DC. Certified technicians, transparent pricing, and your trusted dealer alternative. Call (202) 338-1312.">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AutoRepair",
+    "name": "Georgetown Auto Service",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "3113 K St NW",
+      "addressLocality": "Washington",
+      "addressRegion": "DC",
+      "postalCode": "20007"
+    },
+    "telephone": "+12023381312",
+    "openingHours": ["Mo-Fr 08:00-17:30", "Sa 08:00-14:00"],
+    "url": "https://georgetownautoservice.com"
+  }
+  </script>
+
+  <style>
+    :root {
+      --dark: #1a1f2e;
+      --light-bg: #f4f5f7;
+      --accent: #f5a623;
+      --accent-hover: #e8961f;
+      --white: #ffffff;
+      --text-muted: #9ca3af;
+      --card-shadow: 0 2px 14px rgba(0,0,0,0.07);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--light-bg);
+      color: #2d3748;
+      line-height: 1.6;
+    }
+
+    /* ===== NAVIGATION ===== */
+    #main-nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: var(--dark);
+      padding: 18px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: padding 0.3s ease, box-shadow 0.3s ease;
+    }
+    #main-nav.scrolled {
+      padding: 10px 48px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.35);
+    }
+
+    .nav-logo {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      text-decoration: none;
+      gap: 4px;
+    }
+    .nav-logo-text {
+      color: var(--white);
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+      line-height: 1;
+      white-space: nowrap;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+    }
+    .nav-links a {
+      color: #cbd5e0;
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--white); }
+
+    .btn-book {
+      background: var(--accent);
+      color: var(--dark);
+      padding: 9px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.88rem;
+      transition: background 0.2s;
+      white-space: nowrap;
+    }
+    .btn-book:hover { background: var(--accent-hover); }
+
+    .nav-phone {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.88rem;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      white-space: nowrap;
+    }
+    .nav-phone:hover { color: var(--accent-hover); }
+    .nav-phone svg { flex-shrink: 0; }
+
+    /* Hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--white);
+      transition: all 0.3s ease;
+      border-radius: 2px;
+    }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* Mobile Nav */
+    .mobile-nav {
+      display: none;
+      flex-direction: column;
+      background: var(--dark);
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding: 20px 24px;
+      gap: 4px;
+    }
+    .mobile-nav.open { display: flex; }
+    .mobile-nav a {
+      color: #cbd5e0;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 500;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    .mobile-nav a:last-child { border-bottom: none; }
+    .mobile-nav a:hover { color: var(--white); }
+    .mobile-nav .btn-book {
+      margin-top: 12px;
+      text-align: center;
+      display: block;
+      padding: 12px;
+    }
+    .mobile-nav .nav-phone { margin-top: 8px; border-bottom: none; }
+
+    /* DC Skyline SVG */
+    .skyline-svg { display: block; }
+
+    /* ===== HERO ===== */
+    .hero {
+      position: relative;
+      min-height: 620px;
+      display: flex;
+      align-items: center;
+      background-image: url('https://images.unsplash.com/photo-1632823471565-1ecdf5c6da1e?auto=format&fit=crop&w=1920&q=80');
+      background-size: cover;
+      background-position: center;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(10,14,26,0.82) 0%, rgba(10,14,26,0.55) 70%, rgba(10,14,26,0.35) 100%);
+    }
+    .hero-content {
+      position: relative;
+      max-width: 640px;
+      margin-left: clamp(24px, 8%, 120px);
+      padding: 80px 0;
+    }
+    .hero-content h1 {
+      color: var(--white);
+      font-size: clamp(2rem, 3.8vw, 3rem);
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 18px;
+    }
+    .hero-content p {
+      color: #d1d5db;
+      font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+      margin-bottom: 36px;
+      max-width: 500px;
+    }
+    .btn-hero {
+      display: inline-block;
+      background: var(--accent);
+      color: var(--dark);
+      padding: 15px 36px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 0.95rem;
+      letter-spacing: 0.6px;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn-hero:hover { background: var(--accent-hover); transform: translateY(-1px); }
+
+    /* ===== SECTION HEADER ===== */
+    .section-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    .section-header h2 {
+      font-size: clamp(1.6rem, 2.5vw, 2rem);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #1a202c;
+      margin-bottom: 14px;
+    }
+    .section-header p {
+      color: #4a5568;
+      font-size: 0.98rem;
+      max-width: 560px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    /* ===== SERVICES ===== */
+    .services {
+      background: var(--light-bg);
+      padding: 80px 48px;
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      max-width: 1100px;
+      margin: 0 auto;
+      align-items: start;
+    }
+    .services-col {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    /* Accordion */
+    .accordion-card {
+      background: var(--white);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: var(--card-shadow);
+    }
+    .accordion-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 18px 20px;
+      cursor: pointer;
+      user-select: none;
+      transition: background 0.2s;
+    }
+    .accordion-header:hover { background: #fdf8f0; }
+
+    .accordion-icon {
+      width: 40px;
+      height: 40px;
+      min-width: 40px;
+      background: rgba(245,166,35,0.12);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .accordion-icon svg {
+      width: 20px;
+      height: 20px;
+      stroke: var(--accent);
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .accordion-title {
+      flex: 1;
+      font-weight: 700;
+      font-size: 0.93rem;
+      color: #1a202c;
+    }
+    .accordion-chevron {
+      width: 18px;
+      height: 18px;
+      stroke: #9ca3af;
+      fill: none;
+      stroke-width: 2.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      flex-shrink: 0;
+      transition: transform 0.3s ease;
+    }
+    .accordion-card.open .accordion-chevron { transform: rotate(180deg); }
+
+    .accordion-body {
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height 0.4s ease;
+    }
+    .accordion-card.open .accordion-body { max-height: 800px; }
+
+    .accordion-items {
+      padding: 4px 20px 18px;
+      border-top: 1px solid #f0f0f0;
+    }
+    .accordion-item {
+      padding: 11px 0;
+      border-bottom: 1px solid #f7f7f7;
+    }
+    .accordion-item:last-child { border-bottom: none; }
+    .accordion-item h4 {
+      font-size: 0.86rem;
+      font-weight: 600;
+      color: #2d3748;
+      margin-bottom: 3px;
+    }
+    .accordion-item p {
+      font-size: 0.81rem;
+      color: #718096;
+      line-height: 1.55;
+    }
+
+    /* ===== REVIEWS ===== */
+    .reviews {
+      background: var(--light-bg);
+      padding: 80px 48px;
+      border-top: 1px solid #e5e7eb;
+    }
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      max-width: 920px;
+      margin: 0 auto;
+    }
+    .review-card {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 28px 26px;
+      box-shadow: var(--card-shadow);
+    }
+    .stars {
+      display: flex;
+      gap: 3px;
+      margin-bottom: 14px;
+    }
+    .stars svg {
+      width: 17px;
+      height: 17px;
+      fill: var(--accent);
+    }
+    .review-text {
+      font-size: 0.92rem;
+      color: #4a5568;
+      line-height: 1.7;
+      margin-bottom: 16px;
+      font-style: italic;
+    }
+    .reviewer-name {
+      font-weight: 700;
+      font-size: 0.88rem;
+      color: #1a202c;
+    }
+
+    /* ===== CONTACT ===== */
+    .contact-section {
+      background: var(--dark);
+      padding: 80px 48px 0;
+    }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding-bottom: 64px;
+    }
+
+    /* Map col */
+    .map-col { display: flex; flex-direction: column; gap: 28px; }
+    .map-embed {
+      width: 100%;
+      height: 290px;
+      border-radius: 10px;
+      border: 0;
+      display: block;
+    }
+    .location-info {
+      display: flex;
+      gap: 36px;
+      flex-wrap: wrap;
+    }
+    .info-block h4 {
+      color: var(--white);
+      font-weight: 700;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-bottom: 8px;
+    }
+    .info-block p {
+      color: var(--text-muted);
+      font-size: 0.88rem;
+      line-height: 1.75;
+    }
+    .phone-link {
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+    }
+    .phone-link:hover { color: var(--accent-hover); }
+
+    /* Form col */
+    .form-col h2 {
+      color: var(--white);
+      font-size: 1.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 28px;
+    }
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .form-input {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 8px;
+      color: var(--white);
+      padding: 13px 16px;
+      font-size: 0.93rem;
+      font-family: inherit;
+      outline: none;
+      transition: border-color 0.2s, background 0.2s;
+      width: 100%;
+    }
+    .form-input::placeholder { color: #6b7280; }
+    .form-input:focus {
+      border-color: var(--accent);
+      background: rgba(255,255,255,0.09);
+    }
+    textarea.form-input { resize: vertical; min-height: 130px; }
+    .btn-submit {
+      background: var(--accent);
+      color: var(--dark);
+      border: none;
+      padding: 14px;
+      border-radius: 8px;
+      font-weight: 800;
+      font-size: 0.95rem;
+      letter-spacing: 0.6px;
+      cursor: pointer;
+      transition: background 0.2s;
+      width: 100%;
+      font-family: inherit;
+    }
+    .btn-submit:hover { background: var(--accent-hover); }
+
+    /* ===== FOOTER BAR ===== */
+    .footer-bar {
+      background: var(--dark);
+      border-top: 1px solid rgba(255,255,255,0.07);
+      padding: 22px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .footer-logo-text {
+      color: #9ca3af;
+      font-size: 0.83rem;
+      font-weight: 600;
+    }
+    .footer-links {
+      display: flex;
+      gap: 22px;
+      list-style: none;
+    }
+    .footer-links a {
+      color: #9ca3af;
+      text-decoration: none;
+      font-size: 0.83rem;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--white); }
+    .footer-copy {
+      color: #6b7280;
+      font-size: 0.78rem;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      #main-nav { padding: 14px 20px; }
+      #main-nav.scrolled { padding: 10px 20px; }
+      .nav-right { display: none; }
+      .hamburger { display: flex; }
+
+      .hero { min-height: 520px; }
+      .hero-content { margin-left: 5%; margin-right: 5%; padding: 64px 0; }
+
+      .services { padding: 56px 20px; }
+      .services-grid { grid-template-columns: 1fr; }
+
+      .reviews { padding: 56px 20px; }
+      .reviews-grid { grid-template-columns: 1fr; }
+
+      .contact-section { padding: 56px 20px 0; }
+      .contact-grid { grid-template-columns: 1fr; gap: 40px; padding-bottom: 48px; }
+
+      .footer-bar {
+        padding: 20px;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .footer-links { flex-wrap: wrap; justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== NAVIGATION ===== -->
+<nav id="main-nav">
+  <a href="#home" class="nav-logo">
+    <!-- DC Skyline icon -->
+    <svg class="skyline-svg" width="110" height="22" viewBox="0 0 110 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <!-- Capitol dome center -->
+      <rect x="48" y="10" width="14" height="12" fill="#f5a623" opacity="0.65"/>
+      <path d="M48 10 Q55 3 62 10Z" fill="#f5a623" opacity="0.85"/>
+      <rect x="53.5" y="4" width="3" height="6" fill="#f5a623"/>
+      <!-- Left buildings -->
+      <rect x="2"  y="14" width="8"  height="8"  fill="#f5a623" opacity="0.35"/>
+      <rect x="12" y="11" width="7"  height="11" fill="#f5a623" opacity="0.45"/>
+      <rect x="21" y="13" width="6"  height="9"  fill="#f5a623" opacity="0.35"/>
+      <rect x="29" y="9"  width="7"  height="13" fill="#f5a623" opacity="0.55"/>
+      <rect x="38" y="12" width="8"  height="10" fill="#f5a623" opacity="0.38"/>
+      <!-- Right buildings -->
+      <rect x="64" y="12" width="8"  height="10" fill="#f5a623" opacity="0.38"/>
+      <rect x="74" y="9"  width="7"  height="13" fill="#f5a623" opacity="0.55"/>
+      <rect x="83" y="13" width="6"  height="9"  fill="#f5a623" opacity="0.35"/>
+      <rect x="91" y="11" width="7"  height="11" fill="#f5a623" opacity="0.45"/>
+      <rect x="100" y="14" width="8" height="8"  fill="#f5a623" opacity="0.35"/>
+      <!-- Ground -->
+      <rect x="0" y="21" width="110" height="1" fill="#f5a623" opacity="0.25"/>
+    </svg>
+    <span class="nav-logo-text">Georgetown Auto Service</span>
+  </a>
+
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#about">About Us</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="https://calendly.com" target="_blank" rel="noopener" class="btn-book">Book Online</a>
+    <a href="tel:+12023381312" class="nav-phone">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.01 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/>
+      </svg>
+      (202) 338-1312
+    </a>
+  </div>
+
+  <button class="hamburger" id="hamburger-btn" aria-label="Toggle navigation menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Mobile nav dropdown -->
+<div class="mobile-nav" id="mobile-nav">
+  <a href="#services" class="mobile-link">Services</a>
+  <a href="#reviews" class="mobile-link">Reviews</a>
+  <a href="#about" class="mobile-link">About Us</a>
+  <a href="#contact" class="mobile-link">Contact</a>
+  <a href="https://calendly.com" target="_blank" rel="noopener" class="btn-book">Book Online</a>
+  <a href="tel:+12023381312" class="nav-phone mobile-link">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.01 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/>
+    </svg>
+    (202) 338-1312
+  </a>
+</div>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="home">
+  <div class="hero-content">
+    <h1>Expert Auto Care for the DC Metro Area.</h1>
+    <p>Certified Technicians. Transparent Pricing. Your Dealer Alternative.</p>
+    <a href="https://calendly.com" target="_blank" rel="noopener" class="btn-hero">SCHEDULE YOUR VISIT</a>
+  </div>
+</section>
+
+<!-- ===== SERVICES ===== -->
+<section class="services" id="services">
+  <div class="section-header">
+    <h2>Our Services</h2>
+    <p>From routine maintenance to complex repairs, we handle it all with certified expertise.</p>
+  </div>
+
+  <div class="services-grid">
+
+    <!-- LEFT COLUMN -->
+    <div class="services-col">
+
+      <!-- Oil & Maintenance — expanded by default -->
+      <div class="accordion-card open">
+        <div class="accordion-header" onclick="toggleAccordion(this)">
+          <div class="accordion-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/>
+            </svg>
+          </div>
+          <span class="accordion-title">Oil &amp; Maintenance</span>
+          <svg class="accordion-chevron" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="accordion-body">
+          <div class="accordion-items">
+            <div class="accordion-item">
+              <h4>Synthetic Engine Oil &amp; Filter Change</h4>
+              <p>Keep your engine running smoothly with high-quality synthetic oil.</p>
+            </div>
+            <div class="accordion-item">
+              <h4>All Dealer Scheduled Maintenance</h4>
+              <p>Comprehensive maintenance to meet dealer requirements.</p>
+            </div>
+            <div class="accordion-item">
+              <h4>Complete Tune-Ups</h4>
+              <p>Ensure optimal performance with a thorough tune-up.</p>
+            </div>
+            <div class="accordion-item">
+              <h4>Full Service Fluids Check</h4>
+              <p>Comprehensive checks and top-ups of all vehicle fluids.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Transmission & Engine -->
+      <div class="accordion-card">
+        <div class="accordion-header" onclick="toggleAccordion(this)">
+          <div class="accordion-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="3"/>
+              <path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/>
+            </svg>
+          </div>
+          <span class="accordion-title">Transmission &amp; Engine</span>
+          <svg class="accordion-chevron" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="accordion-body">
+          <div class="accordion-items">
+            <div class="accordion-item">
+              <h4>Automatic Transmission Service &amp; Repair</h4>
+              <p>Comprehensive transmission diagnostics and repairs.</p>
+            </div>
+            <div class="accordion-item">
+              <h4>Manual Transmission &amp; Clutch Repairs</h4>
+              <p>Reliable service for manual transmission issues.</p>
+            </div>
+            <div class="accordion-item">
+              <h4>Engine Repair &amp; Replacement</h4>
+              <p>Expert engine diagnostics and full repair services.</p>
+            </div>
+            <div class="accordion-item">
+              <h4>Complete Electric Diagnostic Repairs</h4>
+              <p>Thorough diagnostics to troubleshoot electrical issues.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cooling & Heating -->
+      <div class="accordion-card">
+        <div class="accordion-header" onclick="toggleAccordion(this)">
+          <div class="accordion-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M14 14.76V3.5a2.5 2.5 0 00-5 0v11.26a4.5 4.5 0 105 0z"/>
+            </svg>
+          </div>
+          <span class="accordion-title">Cooling &amp; Heating</span>
+          <svg class="accordion-chevron" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="accordion-body">
+          <div class="accordion-items">
+            <div class="accordion-item">
+              <h4>Engine Cooling System &amp; Radiator Service</h4>
+              <p>Prevent overheating with thorough cooling system checks.</p>
+            </div>
+            <div class="accordion-item">
+              <h4>Climate Control &amp; Heating Repairs</h4>
+              <p>Stay comfortable with our heating system repairs.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- A/C & Other Repairs -->
+      <div class="accordion-card">
+        <div class="accordion-header" onclick="toggleAccordion(this)">
+          <div class="accordion-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <line x1="4"  y1="21" x2="4"  y2="14"/>
+              <line x1="4"  y1="10" x2="4"  y2="3"/>
+              <line x1="12" y1="21" x2="12" y2="12"/>
+              <line x1="12" y1="8"  x2="12" y2="3"/>
+              <line x1="20" y1="21" x2="20" y2="16"/>
+              <line x1="20" y1="12" x2="20" y2="3"/>
+              <line x1="1"  y1="14" x2="7"  y2="14"/>
+              <line x1="9"  y1="8"  x2="15" y2="8"/>
+              <line x1="17" y1="16" x2="23" y2="16"/>
+            </svg>
+          </div>
+          <span class="accordion-title">A/C &amp; Other Repairs</span>
+          <svg class="accordion-chevron" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="accordion-body">
+          <div class="accordion-items">
+            <div class="accordion-item">
+              <h4>Air Conditioning Service &amp; Repairs</h4>
+              <p>Keep cool with our air conditioning services.</p>
+            </div>
+            <div class="accordion-item">
+              <h4>Full Muffler &amp; Exhaust Service</h4>
+              <p>Expert exhaust system repairs and replacements.</p>
+            </div>
+            <div class="accordion-item">
+              <h4>CV Joints &amp; Axles</h4>
+              <p>Expert repairs for CV joints and axles.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- end left col -->
+
+    <!-- RIGHT COLUMN -->
+    <div class="services-col">
+
+      <!-- Brake & Suspension — expanded by default -->
+      <div class="accordion-card open">
+        <div class="accordion-header" onclick="toggleAccordion(this)">
+          <div class="accordion-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"/>
+              <circle cx="12" cy="12" r="3"/>
+            </svg>
+          </div>
+          <span class="accordion-title">Brake &amp; Suspension</span>
+          <svg class="accordion-chevron" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="accordion-body">
+          <div class="accordion-items">
+            <div class="accordion-item">
+              <h4>Complete Brake Repair &amp; Service</h4>
+              <p>Thorough brake inspections, pad and rotor replacements.</p>
+            </div>
+            <div class="accordion-item">
+              <h4>Suspension Shocks &amp; Struts</h4>
+              <p>Enhance ride quality with our suspension services.</p>
+            </div>
+            <div class="accordion-item">
+              <h4>Complete Suspension Repairs</h4>
+              <p>Full service for suspension system repairs.</p>
+            </div>
+            <div class="accordion-item">
+              <h4>Wheel Balancing &amp; Rotation</h4>
+              <p>Enhance tire life with professional balancing and rotation.</p>
+            </div>
+            <div class="accordion-item">
+              <h4>All Wheel Alignment</h4>
+              <p>Improve handling with precise wheel alignment.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Electrical & Safety -->
+      <div class="accordion-card">
+        <div class="accordion-header" onclick="toggleAccordion(this)">
+          <div class="accordion-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="11" cy="11" r="8"/>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
+          </div>
+          <span class="accordion-title">Electrical &amp; Safety</span>
+          <svg class="accordion-chevron" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="accordion-body">
+          <div class="accordion-items">
+            <div class="accordion-item">
+              <h4>Check Engine Light Service</h4>
+              <p>Diagnose and resolve check engine light issues effectively.</p>
+            </div>
+            <div class="accordion-item">
+              <h4>ABS Light Service</h4>
+              <p>Diagnose and repair ABS light issues.</p>
+            </div>
+            <div class="accordion-item">
+              <h4>Airbag Light Service</h4>
+              <p>Ensure safety with airbag system diagnostics.</p>
+            </div>
+            <div class="accordion-item">
+              <h4>All State Safety Inspection Repairs</h4>
+              <p>Ensure compliance with state safety inspection requirements.</p>
+            </div>
+            <div class="accordion-item">
+              <h4>All State Emissions Repairs</h4>
+              <p>Help your vehicle pass emissions tests with our repairs.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tire & Wheel Services -->
+      <div class="accordion-card">
+        <div class="accordion-header" onclick="toggleAccordion(this)">
+          <div class="accordion-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"/>
+              <circle cx="12" cy="12" r="4"/>
+              <line x1="12" y1="2"  x2="12" y2="8"/>
+              <line x1="12" y1="16" x2="12" y2="22"/>
+              <line x1="2"  y1="12" x2="8"  y2="12"/>
+              <line x1="16" y1="12" x2="22" y2="12"/>
+            </svg>
+          </div>
+          <span class="accordion-title">Tire &amp; Wheel Services</span>
+          <svg class="accordion-chevron" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="accordion-body">
+          <div class="accordion-items">
+            <div class="accordion-item">
+              <h4>Tire Repairs &amp; Sales</h4>
+              <p>Expert tire services including repairs and new tire sales.</p>
+            </div>
+            <div class="accordion-item">
+              <h4>Complete Glass Replacement Service</h4>
+              <p>High-quality glass replacement for your vehicle.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Detailing & Warranty -->
+      <div class="accordion-card">
+        <div class="accordion-header" onclick="toggleAccordion(this)">
+          <div class="accordion-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+            </svg>
+          </div>
+          <span class="accordion-title">Detailing &amp; Warranty</span>
+          <svg class="accordion-chevron" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="accordion-body">
+          <div class="accordion-items">
+            <div class="accordion-item">
+              <h4>Full Automotive Cleaning &amp; Detailing</h4>
+              <p>Make your vehicle shine with our detailing services.</p>
+            </div>
+            <div class="accordion-item">
+              <h4>12 Month / 12,000 Miles Parts &amp; Labor Warranty</h4>
+              <p>Enjoy peace of mind with our warranty on services.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- end right col -->
+  </div><!-- end services-grid -->
+</section>
+
+<!-- ===== REVIEWS ===== -->
+<section class="reviews" id="reviews">
+  <div class="section-header">
+    <h2>Trusted by Drivers</h2>
+  </div>
+  <div class="reviews-grid">
+
+    <div class="review-card">
+      <div class="stars" aria-label="5 stars">
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      </div>
+      <p class="review-text">"They are wonderful to work with and I trust them fully with my car. I take my car here for everything and they always come through for me. Cannot recommend enough!!!"</p>
+      <span class="reviewer-name">Max W.</span>
+    </div>
+
+    <div class="review-card">
+      <div class="stars" aria-label="5 stars">
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      </div>
+      <p class="review-text">"I had a great experience at this shop. The team here is honest, skilled, and efficient. They diagnosed and fixed my car quickly without trying to upsell unnecessary services."</p>
+      <span class="reviewer-name">Sergii</span>
+    </div>
+
+    <div class="review-card">
+      <div class="stars" aria-label="5 stars">
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      </div>
+      <p class="review-text">"Trust worthy and reliable. I bring all of my cars here and have been for years. They are honest and will tell you what really needs to get done vs. unnecessary work. Great local shop!"</p>
+      <span class="reviewer-name">Jenna H.</span>
+    </div>
+
+    <div class="review-card">
+      <div class="stars" aria-label="5 stars">
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      </div>
+      <p class="review-text">"They truly care about their customers and always go the extra mile. Fair pricing, quality work, and an all-around great experience every single time."</p>
+      <span class="reviewer-name">Larry K.</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- Anchor for About Us nav link -->
+<span id="about"></span>
+
+<!-- ===== CONTACT & FOOTER ===== -->
+<section class="contact-section" id="contact">
+  <div class="contact-grid">
+
+    <!-- Map column -->
+    <div class="map-col">
+      <iframe
+        class="map-embed"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3105.1!2d-77.0633!3d38.9027!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b7b648e7f8f4e7%3A0x1!2s3113+K+St+NW%2C+Washington%2C+DC+20007!5e0!3m2!1sen!2sus!4v1234567890"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Georgetown Auto Service on Google Maps">
+      </iframe>
+
+      <div class="location-info">
+        <div class="info-block">
+          <h4>Address</h4>
+          <p>3113 K St NW<br>Washington, DC 20007</p>
+        </div>
+        <div class="info-block">
+          <h4>Hours</h4>
+          <p>Mon – Fri: 8 AM – 5:30 PM<br>Sat: 8 AM – 2 PM<br>Sun: Closed</p>
+        </div>
+        <div class="info-block">
+          <h4>Phone</h4>
+          <a href="tel:+12023381312" class="phone-link">(202) 338-1312</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Form column -->
+    <div class="form-col">
+      <h2>Contact</h2>
+      <!-- Replace REPLACE_WITH_ID with your Formspree form ID -->
+      <form class="contact-form" action="https://formspree.io/f/mqeovpdl" method="POST">
+        <input  type="text"  name="name"    class="form-input" placeholder="Your Name"    required>
+        <input  type="email" name="email"   class="form-input" placeholder="Your Email"   required>
+        <textarea             name="message" class="form-input" placeholder="Your Message" rows="5" required></textarea>
+        <button type="submit" class="btn-submit">SEND MESSAGE</button>
+      </form>
+    </div>
+
+  </div><!-- end contact-grid -->
+
+  <!-- Footer bar -->
+  <div class="footer-bar">
+    <span class="footer-logo-text">Georgetown Auto Service</span>
+    <ul class="footer-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <span class="footer-copy">&copy; 2026 Georgetown Auto Service. All rights reserved.</span>
+  </div>
+</section>
+
+<script>
+  // Nav shrink on scroll
+  const mainNav = document.getElementById('main-nav');
+  window.addEventListener('scroll', () => {
+    mainNav.classList.toggle('scrolled', window.scrollY > 60);
+  }, { passive: true });
+
+  // Hamburger toggle
+  const hamburgerBtn = document.getElementById('hamburger-btn');
+  const mobileNav    = document.getElementById('mobile-nav');
+  hamburgerBtn.addEventListener('click', () => {
+    const isOpen = mobileNav.classList.toggle('open');
+    hamburgerBtn.classList.toggle('open', isOpen);
+    hamburgerBtn.setAttribute('aria-expanded', isOpen);
+  });
+
+  // Close mobile nav when a link is tapped
+  mobileNav.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileNav.classList.remove('open');
+      hamburgerBtn.classList.remove('open');
+      hamburgerBtn.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  // Independent accordion toggle
+  function toggleAccordion(header) {
+    header.closest('.accordion-card').classList.toggle('open');
+  }
+
+  // Smooth scroll for all in-page anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', e => {
+      const id = link.getAttribute('href').slice(1);
+      const target = document.getElementById(id);
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+</script>
+</body>
+</html>
