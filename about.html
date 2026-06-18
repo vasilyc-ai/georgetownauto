@@ -1,244 +1,652 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Learn about Georgetown Auto Service — family-owned since 2003, founded by Bobby Gonzales in Alexandria, VA. Serving the greater Washington DC area with honest, quality auto repair." />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About Us | Georgetown Auto Service</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+  <meta name="description" content="Learn about Georgetown Auto Service — family-owned, founded on honesty and transparency, serving Washington DC and the Metro area with certified auto repair since 2003.">
+
+  <style>
+    :root {
+      --dark: #1a1f2e;
+      --light-bg: #f4f5f7;
+      --accent: #f5a623;
+      --accent-hover: #e8961f;
+      --white: #ffffff;
+      --text-muted: #9ca3af;
+      --card-shadow: 0 2px 14px rgba(0,0,0,0.07);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--light-bg);
+      color: #2d3748;
+      line-height: 1.6;
+    }
+
+    /* ===== NAV (identical to index.html) ===== */
+    #main-nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: var(--dark);
+      padding: 18px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: padding 0.3s ease, box-shadow 0.3s ease;
+    }
+    #main-nav.scrolled {
+      padding: 10px 48px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.35);
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+    .nav-logo-img {
+      height: 48px;
+      width: auto;
+      display: block;
+    }
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+    }
+    .nav-links a {
+      color: #cbd5e0;
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--white); }
+    .nav-links a.active { color: var(--accent); }
+    .btn-book {
+      background: var(--accent);
+      color: var(--dark);
+      padding: 9px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.88rem;
+      transition: background 0.2s;
+      white-space: nowrap;
+    }
+    .btn-book:hover { background: var(--accent-hover); }
+    .nav-phone {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.88rem;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      white-space: nowrap;
+    }
+    .nav-phone:hover { color: var(--accent-hover); }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--white);
+      transition: all 0.3s ease;
+      border-radius: 2px;
+    }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    .mobile-nav {
+      display: none;
+      flex-direction: column;
+      background: var(--dark);
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding: 20px 24px;
+      gap: 4px;
+    }
+    .mobile-nav.open { display: flex; }
+    .mobile-nav a {
+      color: #cbd5e0;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 500;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    .mobile-nav a:last-child { border-bottom: none; }
+    .mobile-nav a:hover { color: var(--white); }
+    .mobile-nav .btn-book { margin-top: 12px; text-align: center; display: block; padding: 12px; }
+    .mobile-nav .nav-phone { margin-top: 8px; border-bottom: none; }
+
+    /* ===== PAGE HERO ===== */
+    .page-hero {
+      background: var(--dark);
+      padding: 72px 48px 64px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at center top, rgba(245,166,35,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .page-hero .eyebrow {
+      display: inline-block;
+      color: var(--accent);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    .page-hero h1 {
+      color: var(--white);
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+    .page-hero p {
+      color: #9ca3af;
+      font-size: 1rem;
+      max-width: 540px;
+      margin: 0 auto;
+    }
+
+    /* ===== ABOUT STORY ===== */
+    .about-story {
+      background: var(--white);
+      padding: 80px 48px;
+    }
+    .about-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      max-width: 1100px;
+      margin: 0 auto;
+      align-items: center;
+    }
+    .about-text .eyebrow {
+      display: inline-block;
+      color: var(--accent);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    .about-text h2 {
+      font-size: clamp(1.5rem, 2.5vw, 2rem);
+      font-weight: 800;
+      color: #1a202c;
+      line-height: 1.3;
+      margin-bottom: 20px;
+    }
+    .about-text p {
+      color: #4a5568;
+      font-size: 0.95rem;
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+    .about-text p:last-of-type { margin-bottom: 0; }
+    .about-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 32px;
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: var(--dark);
+      padding: 12px 28px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.9rem;
+      transition: background 0.2s;
+    }
+    .btn-primary:hover { background: var(--accent-hover); }
+    .btn-outline {
+      background: transparent;
+      color: #2d3748;
+      padding: 12px 28px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.9rem;
+      border: 2px solid #d1d5db;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+
+    .about-media {
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+    }
+    .about-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* ===== VALUES ===== */
+    .values-section {
+      background: var(--light-bg);
+      padding: 80px 48px;
+    }
+    .section-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    .section-header .eyebrow {
+      display: inline-block;
+      color: var(--accent);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .section-header h2 {
+      font-size: clamp(1.6rem, 2.5vw, 2rem);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #1a202c;
+      margin-bottom: 12px;
+    }
+    .section-header p {
+      color: #4a5568;
+      font-size: 0.95rem;
+      max-width: 540px;
+      margin: 0 auto;
+    }
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .value-card {
+      background: var(--white);
+      border-radius: 10px;
+      padding: 28px 24px;
+      box-shadow: var(--card-shadow);
+    }
+    .value-card h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #1a202c;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .value-card h4::before {
+      content: '';
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      min-width: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+    .value-card p {
+      font-size: 0.88rem;
+      color: #4a5568;
+      line-height: 1.7;
+    }
+
+    /* ===== STATS ===== */
+    .stats-section {
+      background: var(--white);
+      padding: 80px 48px;
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .stat-card {
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
+      padding: 36px 20px;
+    }
+    .stat-number {
+      font-size: 2.4rem;
+      font-weight: 800;
+      color: var(--accent);
+      display: block;
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+    .stat-label {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 600;
+    }
+
+    /* ===== CTA BANNER ===== */
+    .cta-banner {
+      background: var(--dark);
+      padding: 72px 48px;
+      text-align: center;
+    }
+    .cta-banner h2 {
+      color: var(--white);
+      font-size: clamp(1.5rem, 2.5vw, 2rem);
+      font-weight: 800;
+      margin-bottom: 14px;
+    }
+    .cta-banner p {
+      color: var(--text-muted);
+      font-size: 0.98rem;
+      margin-bottom: 32px;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .cta-actions {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn-white {
+      background: var(--white);
+      color: var(--dark);
+      padding: 13px 32px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.95rem;
+      transition: background 0.2s;
+    }
+    .btn-white:hover { background: #f0f0f0; }
+    .btn-outline-white {
+      background: transparent;
+      color: var(--white);
+      padding: 13px 32px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.95rem;
+      border: 2px solid rgba(255,255,255,0.3);
+      transition: border-color 0.2s;
+    }
+    .btn-outline-white:hover { border-color: var(--white); }
+
+    /* ===== FOOTER BAR (matches index.html) ===== */
+    .footer-bar {
+      background: var(--dark);
+      border-top: 1px solid rgba(255,255,255,0.07);
+      padding: 22px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .footer-logo-text {
+      color: #9ca3af;
+      font-size: 0.83rem;
+      font-weight: 600;
+    }
+    .footer-links {
+      display: flex;
+      gap: 22px;
+      list-style: none;
+    }
+    .footer-links a {
+      color: #9ca3af;
+      text-decoration: none;
+      font-size: 0.83rem;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--white); }
+    .footer-copy {
+      color: #6b7280;
+      font-size: 0.78rem;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      #main-nav { padding: 14px 20px; }
+      #main-nav.scrolled { padding: 10px 20px; }
+      .nav-right { display: none; }
+      .hamburger { display: flex; }
+
+      .page-hero { padding: 56px 24px 48px; }
+
+      .about-story { padding: 56px 24px; }
+      .about-layout { grid-template-columns: 1fr; gap: 36px; }
+
+      .values-section { padding: 56px 24px; }
+      .values-grid { grid-template-columns: 1fr; }
+
+      .stats-section { padding: 56px 24px; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+
+      .cta-banner { padding: 56px 24px; }
+
+      .footer-bar {
+        padding: 20px;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .footer-links { flex-wrap: wrap; justify-content: center; }
+    }
+  </style>
 </head>
 <body>
 
-<!-- NAV -->
-<nav class="navbar">
-  <div class="container">
-    <div class="nav-inner">
-      <a href="index.html" class="nav-logo">
-        <div class="logo-mark">G</div>
-        <div class="logo-text-wrap">
-          <div class="logo-name">Georgetown <em>Auto</em></div>
-          <div class="logo-sub">Auto Service</div>
-        </div>
-      </a>
-      <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="services.html">Services</a>
-        <a href="about.html" class="active">About Us</a>
-        <a href="contact.html">Contact</a>
-      </div>
-      <div class="nav-right">
-        <a href="tel:2029653123" class="nav-phone">
-          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6.08 6.08l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          (202) 965-3123
-        </a>
-        <a href="contact.html" class="btn btn-primary nav-cta-btn">Book Online</a>
-      </div>
-      <button class="hamburger" id="hamburger" aria-label="Open menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
+<!-- ===== NAV ===== -->
+<nav id="main-nav">
+  <a href="index.html" class="nav-logo">
+    <img src="logo.png" alt="Georgetown Auto Service" class="nav-logo-img">
+  </a>
+
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="index.html#services">Services</a></li>
+      <li><a href="index.html#reviews">Reviews</a></li>
+      <li><a href="about.html" class="active">About Us</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+    <a href="https://calendly.com" target="_blank" rel="noopener" class="btn-book">Book Online</a>
+    <a href="tel:+12023381312" class="nav-phone">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.01 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/>
+      </svg>
+      (202) 338-1312
+    </a>
   </div>
+
+  <button class="hamburger" id="hamburger-btn" aria-label="Toggle navigation menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
 
 <div class="mobile-nav" id="mobile-nav">
-  <a href="index.html">Home</a>
-  <a href="services.html">Services</a>
+  <a href="index.html#services">Services</a>
+  <a href="index.html#reviews">Reviews</a>
   <a href="about.html">About Us</a>
-  <a href="contact.html">Contact</a>
-  <a href="contact.html" class="btn btn-primary">Schedule Service</a>
+  <a href="index.html#contact">Contact</a>
+  <a href="https://calendly.com" target="_blank" rel="noopener" class="btn-book">Book Online</a>
+  <a href="tel:+12023381312" class="nav-phone">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.01 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/>
+    </svg>
+    (202) 338-1312
+  </a>
 </div>
 
-<!-- PAGE HEADER -->
-<header class="page-header">
-  <div class="container">
-    <span class="eyebrow" style="color:rgba(255,255,255,0.4)">Our Story</span>
-    <h1>About Georgetown Auto</h1>
-    <p>A family business built on trust, transparency, and 20+ years of doing right by our customers.</p>
-  </div>
+<!-- ===== PAGE HERO ===== -->
+<header class="page-hero">
+  <span class="eyebrow">Our Story</span>
+  <h1>About Georgetown Auto Service</h1>
+  <p>A family business built on trust, transparency, and 20+ years of doing right by our customers.</p>
 </header>
 
-<!-- ABOUT SECTION -->
-<section class="about-section">
-  <div class="container">
-    <div class="about-layout">
-      <div class="about-text">
-        <span class="eyebrow">Founded 2003</span>
-        <h2>More Than a Mechanic. A Neighbor You Can Trust.</h2>
-        <p>
-          Georgetown Auto Service was founded in 2003 by Bobby Gonzales with a simple belief:
-          people deserve an auto shop they can actually trust. One that explains what's wrong,
-          tells you what it costs upfront, and does the work right.
-        </p>
-        <p>
-          Over two decades later, that belief is still what drives us. We're a family-owned shop
-          serving the Alexandria and Washington DC community — not a franchise, not a chain. Every
-          car that comes in gets treated like it belongs to someone we know, because it usually does.
-        </p>
-        <p>
-          Our team has seen it all, from routine oil changes to complex diagnostics on high-end
-          European vehicles. We invest in modern equipment and ongoing training so we can handle
-          whatever your car needs. And if we ever find something your car <em>doesn't</em> need,
-          we'll tell you that too.
-        </p>
-        <p>
-          We look forward to serving you — and earning a spot as your shop for life.
-        </p>
-        <div style="margin-top:32px; display:flex; gap:12px; flex-wrap:wrap;">
-          <a href="contact.html" class="btn btn-primary">Schedule a Visit</a>
-          <a href="services.html" class="btn btn-outline">Our Services</a>
-        </div>
+<!-- ===== ABOUT STORY ===== -->
+<section class="about-story">
+  <div class="about-layout">
+    <div class="about-text">
+      <span class="eyebrow">Founded 2003</span>
+      <h2>Welcome to Georgetown Auto</h2>
+      <p>Georgetown Auto is a family-owned automotive service shop that has proudly served our community in Washington DC for over 15 years.</p>
+      <p>Founded by Bobby Gonzales in 2003, our shop is built on the principles of trustworthiness and integrity. We understand that your vehicle is a significant investment, and we are dedicated to providing exceptional service that prioritizes your safety and satisfaction.</p>
+      <p>At Georgetown Auto, we take pride in our quality workmanship and excellent communication. Our experienced team is committed to ensuring that every customer leaves satisfied, whether they're coming in for routine maintenance, repairs, or specialized services. We offer a wide range of automotive solutions, including oil changes, brake repairs, tire rotations, and diagnostics, ensuring that your vehicle receives the care it deserves.</p>
+      <p>As a family-owned business, we strive to create a welcoming atmosphere where customers feel valued and understood. Our goal is not just to meet your expectations but to exceed them, fostering long-lasting relationships built on mutual trust. When you choose Georgetown Auto, you're choosing a team that truly cares about your vehicle and your experience.</p>
+      <div class="about-actions">
+        <a href="https://calendly.com" target="_blank" rel="noopener" class="btn-primary">Schedule a Visit</a>
+        <a href="index.html#services" class="btn-outline">Our Services</a>
       </div>
-      <div class="about-media">
-        <!-- Replace YOUR_VIDEO_ID with the actual YouTube video ID -->
-        <iframe
-          src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
-          title="Georgetown Auto Service"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe>
-      </div>
+    </div>
+
+    <div class="about-media">
+      <img src="bobby.jpg" alt="Bobby Gonzales, founder of Georgetown Auto Service, working on a vehicle">
     </div>
   </div>
 </section>
 
-<!-- VALUES -->
-<section class="values-section section--light">
-  <div class="container">
-    <div class="section-header centered">
-      <span class="eyebrow">What We Stand For</span>
-      <h2>Our Values</h2>
-      <p>These aren't words on a wall. They're the standard we hold ourselves to every single day.</p>
+<!-- ===== VALUES ===== -->
+<section class="values-section">
+  <div class="section-header">
+    <span class="eyebrow">What We Stand For</span>
+    <h2>Our Values</h2>
+    <p>These aren't words on a wall. They're the standard we hold ourselves to every single day.</p>
+  </div>
+  <div class="values-grid">
+    <div class="value-card">
+      <h4>Honesty</h4>
+      <p>We tell you what your car actually needs. If something can wait, we'll say so. If there's a recall that covers it, we'll tell you that too — even if it means you go to the dealer instead.</p>
     </div>
-    <div class="values-grid">
-      <div class="value-card">
-        <h4>Honesty</h4>
-        <p>We tell you what your car actually needs. If something can wait, we'll say so. If there's a recall that covers it, we'll tell you that too — even if it means you go to the dealer instead.</p>
-      </div>
-      <div class="value-card">
-        <h4>Transparency</h4>
-        <p>No hidden fees, no surprise charges. You get a clear estimate before any work starts, and we walk you through what we found and why it matters.</p>
-      </div>
-      <div class="value-card">
-        <h4>Quality</h4>
-        <p>We use quality parts, take the time to do the job right, and stand behind our work. Cutting corners costs everyone more in the long run.</p>
-      </div>
-      <div class="value-card">
-        <h4>Communication</h4>
-        <p>We speak plain English. No jargon, no overwhelming you with technical terms — just a clear explanation of what's happening with your vehicle and what your options are.</p>
-      </div>
-      <div class="value-card">
-        <h4>Respect</h4>
-        <p>Your time is valuable. We aim to get your car done when we say it will be done, and we'll always keep you updated if anything changes.</p>
-      </div>
-      <div class="value-card">
-        <h4>Community</h4>
-        <p>We're part of this community. We sponsor local events, support our neighbors, and believe that a thriving local business means a stronger neighborhood for everyone.</p>
-      </div>
+    <div class="value-card">
+      <h4>Transparency</h4>
+      <p>No hidden fees, no surprise charges. You get a clear estimate before any work starts, and we walk you through what we found and why it matters.</p>
+    </div>
+    <div class="value-card">
+      <h4>Quality</h4>
+      <p>We use quality parts, take the time to do the job right, and stand behind our work with a 12-month / 12,000-mile parts and labor warranty.</p>
+    </div>
+    <div class="value-card">
+      <h4>Communication</h4>
+      <p>We speak plain English. No jargon — just a clear explanation of what's happening with your vehicle and what your options are.</p>
+    </div>
+    <div class="value-card">
+      <h4>Respect</h4>
+      <p>Your time is valuable. We aim to get your car done when we say it will be done, and we'll always keep you updated if anything changes.</p>
+    </div>
+    <div class="value-card">
+      <h4>Community</h4>
+      <p>We're part of this community. We believe that a thriving local business means a stronger neighborhood for everyone.</p>
     </div>
   </div>
 </section>
 
-<!-- STATS ROW -->
-<section class="section">
-  <div class="container">
-    <div class="section-header centered">
-      <span class="eyebrow">By the Numbers</span>
-      <h2>20 Years of Showing Up</h2>
-      <p>We're proud of what we've built — but we're more proud of the relationships behind every number.</p>
+<!-- ===== STATS ===== -->
+<section class="stats-section">
+  <div class="section-header">
+    <span class="eyebrow">By the Numbers</span>
+    <h2>20 Years of Showing Up</h2>
+    <p>We're proud of what we've built — but we're more proud of the relationships behind every number.</p>
+  </div>
+  <div class="stats-grid">
+    <div class="stat-card">
+      <span class="stat-number">2003</span>
+      <span class="stat-label">Year Founded</span>
     </div>
-    <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:20px; text-align:center;">
-      <div style="border:1px solid var(--border); border-radius:6px; padding:36px 20px;">
-        <span style="font-size:42px; font-weight:800; color:var(--red); display:block; line-height:1;">2003</span>
-        <span style="font-size:13px; color:var(--muted); margin-top:8px; display:block; text-transform:uppercase; letter-spacing:1px; font-weight:600;">Year Founded</span>
-      </div>
-      <div style="border:1px solid var(--border); border-radius:6px; padding:36px 20px;">
-        <span style="font-size:42px; font-weight:800; color:var(--red); display:block; line-height:1;">5,000+</span>
-        <span style="font-size:13px; color:var(--muted); margin-top:8px; display:block; text-transform:uppercase; letter-spacing:1px; font-weight:600;">Customers Served</span>
-      </div>
-      <div style="border:1px solid var(--border); border-radius:6px; padding:36px 20px;">
-        <span style="font-size:42px; font-weight:800; color:var(--red); display:block; line-height:1;">4.9★</span>
-        <span style="font-size:13px; color:var(--muted); margin-top:8px; display:block; text-transform:uppercase; letter-spacing:1px; font-weight:600;">Google Rating</span>
-      </div>
-      <div style="border:1px solid var(--border); border-radius:6px; padding:36px 20px;">
-        <span style="font-size:42px; font-weight:800; color:var(--red); display:block; line-height:1;">2</span>
-        <span style="font-size:13px; color:var(--muted); margin-top:8px; display:block; text-transform:uppercase; letter-spacing:1px; font-weight:600;">DC &amp; VA Locations</span>
-      </div>
+    <div class="stat-card">
+      <span class="stat-number">5,000+</span>
+      <span class="stat-label">Customers Served</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-number">4.9★</span>
+      <span class="stat-label">Google Rating</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-number">12mo</span>
+      <span class="stat-label">Warranty on All Work</span>
     </div>
   </div>
 </section>
 
-<!-- CTA BANNER -->
+<!-- ===== CTA BANNER ===== -->
 <section class="cta-banner">
-  <div class="container">
-    <h2>Come See What the Difference Feels Like</h2>
-    <p>Stop by, give us a call, or fill out our form. We'd love to earn your business.</p>
-    <div class="cta-actions">
-      <a href="contact.html" class="btn btn-white btn-lg">Get in Touch</a>
-      <a href="tel:2029653123" class="btn btn-outline-white btn-lg">(202) 965-3123</a>
-    </div>
+  <h2>Come See What the Difference Feels Like</h2>
+  <p>Stop by, give us a call, or book online. We'd love to earn your business.</p>
+  <div class="cta-actions">
+    <a href="https://calendly.com" target="_blank" rel="noopener" class="btn-white">Book Online</a>
+    <a href="tel:+12023381312" class="btn-outline-white">(202) 338-1312</a>
   </div>
 </section>
 
-<!-- FOOTER -->
-<footer class="footer">
-  <div class="container">
-    <div class="footer-top">
-      <div class="footer-brand">
-        <span class="logo-text">Georgetown <em>Auto</em></span>
-        <p>Family-owned automotive service proudly serving Alexandria and the greater Washington DC area since 2003.</p>
-        <div class="footer-social">
-          <a href="https://www.facebook.com" aria-label="Facebook" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg>
-          </a>
-          <a href="https://www.instagram.com" aria-label="Instagram" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-          </a>
-          <a href="https://www.yelp.com" aria-label="Yelp" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg>
-          </a>
-        </div>
-      </div>
-      <div class="footer-col">
-        <h5>Navigation</h5>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h5>Services</h5>
-        <ul>
-          <li><a href="services.html">Oil Change</a></li>
-          <li><a href="services.html">Brake Repair</a></li>
-          <li><a href="services.html">Engine Repair</a></li>
-          <li><a href="services.html">Tire Services</a></li>
-          <li><a href="services.html">All Services</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h5>Contact</h5>
-        <p>
-          418 E Raymond Ave<br />
-          Alexandria, VA 22301<br /><br />
-          <a href="tel:2029653123">DC: (202) 965-3123</a><br />
-          <a href="tel:5719704010">VA: (571) 970-4010</a><br /><br />
-          Mon–Fri: 7:00am – 6:00pm<br />
-          Sat–Sun: 9:00am – 3:00pm
-        </p>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>© 2024 Georgetown Auto Service LLC. All rights reserved.</p>
-      <p>418 E Raymond Ave, Alexandria, VA 22301</p>
-    </div>
-  </div>
-</footer>
+<!-- ===== FOOTER BAR ===== -->
+<div class="footer-bar">
+  <span class="footer-logo-text">Georgetown Auto Service</span>
+  <ul class="footer-links">
+    <li><a href="index.html#services">Services</a></li>
+    <li><a href="index.html#reviews">Reviews</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+  <span class="footer-copy">&copy; 2026 Georgetown Auto Service. All rights reserved.</span>
+</div>
 
-<script src="script.js"></script>
+<script>
+  const mainNav = document.getElementById('main-nav');
+  window.addEventListener('scroll', () => {
+    mainNav.classList.toggle('scrolled', window.scrollY > 60);
+  }, { passive: true });
+
+  const hamburgerBtn = document.getElementById('hamburger-btn');
+  const mobileNav    = document.getElementById('mobile-nav');
+  hamburgerBtn.addEventListener('click', () => {
+    const isOpen = mobileNav.classList.toggle('open');
+    hamburgerBtn.classList.toggle('open', isOpen);
+    hamburgerBtn.setAttribute('aria-expanded', isOpen);
+  });
+  mobileNav.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileNav.classList.remove('open');
+      hamburgerBtn.classList.remove('open');
+      hamburgerBtn.setAttribute('aria-expanded', 'false');
+    });
+  });
+</script>
 </body>
 </html>

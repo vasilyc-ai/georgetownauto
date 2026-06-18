@@ -13,10 +13,10 @@
     "name": "Georgetown Auto Service",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "3113 K St NW",
-      "addressLocality": "Washington",
-      "addressRegion": "DC",
-      "postalCode": "20007"
+      "streetAddress": "418 E. Raymond Ave",
+      "addressLocality": "Alexandria",
+      "addressRegion": "VA",
+      "postalCode": "22301"
     },
     "telephone": "+12023381312",
     "openingHours": ["Mo-Fr 08:00-17:30", "Sa 08:00-14:00"],
@@ -63,18 +63,13 @@
 
     .nav-logo {
       display: flex;
-      flex-direction: column;
-      align-items: flex-start;
+      align-items: center;
       text-decoration: none;
-      gap: 4px;
     }
-    .nav-logo-text {
-      color: var(--white);
-      font-size: 1.05rem;
-      font-weight: 700;
-      letter-spacing: 0.3px;
-      line-height: 1;
-      white-space: nowrap;
+    .nav-logo-img {
+      height: 48px;
+      width: auto;
+      display: block;
     }
 
     .nav-right {
@@ -182,7 +177,7 @@
       min-height: 620px;
       display: flex;
       align-items: center;
-      background-image: url('https://images.unsplash.com/photo-1632823471565-1ecdf5c6da1e?auto=format&fit=crop&w=1920&q=80');
+      background-image: url('banner.png');
       background-size: cover;
       background-position: center;
     }
@@ -224,6 +219,85 @@
       transition: background 0.2s, transform 0.15s;
     }
     .btn-hero:hover { background: var(--accent-hover); transform: translateY(-1px); }
+
+    /* ===== RATINGS BAR ===== */
+    .ratings-bar {
+      background: var(--white);
+      border-bottom: 1px solid #e5e7eb;
+      padding: 20px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+    .rating-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+    }
+    .rating-platform-icon {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .rating-platform-icon svg {
+      width: 28px;
+      height: 28px;
+      flex-shrink: 0;
+    }
+    .rating-platform-name {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #1a202c;
+    }
+    .rating-divider {
+      width: 1px;
+      height: 36px;
+      background: #e5e7eb;
+    }
+    .rating-stars-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .rating-stars {
+      display: flex;
+      gap: 2px;
+    }
+    .rating-stars svg {
+      width: 16px;
+      height: 16px;
+      fill: var(--accent);
+    }
+    .rating-score {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: #1a202c;
+    }
+    .rating-count {
+      font-size: 0.8rem;
+      color: #718096;
+    }
+    .rating-cta {
+      font-size: 0.78rem;
+      color: var(--accent);
+      font-weight: 600;
+      white-space: nowrap;
+      border: 1px solid var(--accent);
+      padding: 4px 10px;
+      border-radius: 4px;
+      transition: background 0.2s, color 0.2s;
+    }
+    .rating-item:hover .rating-cta {
+      background: var(--accent);
+      color: var(--dark);
+    }
+    @media (max-width: 768px) {
+      .ratings-bar { padding: 16px 20px; gap: 20px; }
+      .rating-divider { display: none; }
+    }
 
     /* ===== SECTION HEADER ===== */
     .section-header {
@@ -359,7 +433,7 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 24px;
-      max-width: 920px;
+      max-width: 1100px;
       margin: 0 auto;
     }
     .review-card {
@@ -555,35 +629,14 @@
 <!-- ===== NAVIGATION ===== -->
 <nav id="main-nav">
   <a href="#home" class="nav-logo">
-    <!-- DC Skyline icon -->
-    <svg class="skyline-svg" width="110" height="22" viewBox="0 0 110 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <!-- Capitol dome center -->
-      <rect x="48" y="10" width="14" height="12" fill="#f5a623" opacity="0.65"/>
-      <path d="M48 10 Q55 3 62 10Z" fill="#f5a623" opacity="0.85"/>
-      <rect x="53.5" y="4" width="3" height="6" fill="#f5a623"/>
-      <!-- Left buildings -->
-      <rect x="2"  y="14" width="8"  height="8"  fill="#f5a623" opacity="0.35"/>
-      <rect x="12" y="11" width="7"  height="11" fill="#f5a623" opacity="0.45"/>
-      <rect x="21" y="13" width="6"  height="9"  fill="#f5a623" opacity="0.35"/>
-      <rect x="29" y="9"  width="7"  height="13" fill="#f5a623" opacity="0.55"/>
-      <rect x="38" y="12" width="8"  height="10" fill="#f5a623" opacity="0.38"/>
-      <!-- Right buildings -->
-      <rect x="64" y="12" width="8"  height="10" fill="#f5a623" opacity="0.38"/>
-      <rect x="74" y="9"  width="7"  height="13" fill="#f5a623" opacity="0.55"/>
-      <rect x="83" y="13" width="6"  height="9"  fill="#f5a623" opacity="0.35"/>
-      <rect x="91" y="11" width="7"  height="11" fill="#f5a623" opacity="0.45"/>
-      <rect x="100" y="14" width="8" height="8"  fill="#f5a623" opacity="0.35"/>
-      <!-- Ground -->
-      <rect x="0" y="21" width="110" height="1" fill="#f5a623" opacity="0.25"/>
-    </svg>
-    <span class="nav-logo-text">Georgetown Auto Service</span>
+    <img src="logo.png" alt="Georgetown Auto Service" class="nav-logo-img">
   </a>
 
   <div class="nav-right">
     <ul class="nav-links">
       <li><a href="#services">Services</a></li>
       <li><a href="#reviews">Reviews</a></li>
-      <li><a href="#about">About Us</a></li>
+      <li><a href="about.html">About Us</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
     <a href="https://calendly.com" target="_blank" rel="noopener" class="btn-book">Book Online</a>
@@ -604,7 +657,7 @@
 <div class="mobile-nav" id="mobile-nav">
   <a href="#services" class="mobile-link">Services</a>
   <a href="#reviews" class="mobile-link">Reviews</a>
-  <a href="#about" class="mobile-link">About Us</a>
+  <a href="about.html" class="mobile-link">About Us</a>
   <a href="#contact" class="mobile-link">Contact</a>
   <a href="https://calendly.com" target="_blank" rel="noopener" class="btn-book">Book Online</a>
   <a href="tel:+12023381312" class="nav-phone mobile-link">
@@ -623,6 +676,63 @@
     <a href="https://calendly.com" target="_blank" rel="noopener" class="btn-hero">SCHEDULE YOUR VISIT</a>
   </div>
 </section>
+
+<!-- ===== RATINGS BAR ===== -->
+<div class="ratings-bar">
+
+  <!-- Google -->
+  <a class="rating-item" href="https://www.google.com/search?q=Georgetown+Auto+Service+Alexandria+VA" target="_blank" rel="noopener">
+    <div class="rating-platform-icon">
+      <!-- Google G logo -->
+      <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+        <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
+        <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
+        <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
+        <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.31-8.16 2.31-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
+        <path fill="none" d="M0 0h48v48H0z"/>
+      </svg>
+      <span class="rating-platform-name">Google</span>
+    </div>
+    <div class="rating-stars-row">
+      <div class="rating-stars">
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      </div>
+      <span class="rating-score">4.9</span>
+      <span class="rating-count">(200+ reviews)</span>
+    </div>
+    <span class="rating-cta">See Reviews</span>
+  </a>
+
+  <div class="rating-divider"></div>
+
+  <!-- Yelp -->
+  <a class="rating-item" href="https://www.yelp.com/biz/georgetown-auto-service-alexandria" target="_blank" rel="noopener">
+    <div class="rating-platform-icon">
+      <!-- Yelp logo -->
+      <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+        <path fill="#D32323" d="M24 4C13 4 4 13 4 24s9 20 20 20 20-9 20-20S35 4 24 4zm-3.5 27.2l-5.8 3.4c-.6.4-1.4.1-1.6-.5l-.1-.3c-.1-.7.2-1.4.8-1.8l5.2-3.8c.5-.4 1.2-.1 1.3.5l.5 1.8c.1.3 0 .5-.3.7zm1.2-6.7l-8 1.3c-.7.1-1.3-.4-1.3-1.1v-.3c0-.7.5-1.4 1.2-1.5l7.8-1.7c.6-.1 1.1.4 1 1l-.2 1.8c0 .3-.2.5-.5.5zm.8-6.3l-6-5.5c-.5-.5-.5-1.3 0-1.8l.2-.2c.5-.5 1.3-.5 1.8 0l6.5 5c.5.4.5 1.1.1 1.5l-1.2 1.4c-.2.2-.5.3-.8.3-.3-.1-.5-.3-.6-.7zm6.3 11.6l-1.5 1.2c-.2.2-.6.2-.8 0l-.6-.6c-.4-.4-.4-1 0-1.4l1.5-1.5c.4-.4 1-.4 1.4 0l.6.6c.2.2.2.6 0 .8l-.6 1.4v-.5zm2.9-5.8l-8.4-.8c-.7-.1-1.1-.8-.9-1.4l.1-.3c.2-.7.9-1.1 1.6-.9l8.2 1.8c.7.1 1 .9.7 1.5l-.8 1.6c-.1.3-.4.5-.7.5-.3-.1-.5-.3-.6-.5-.1-.1-.1-.2-.2-.5z"/>
+      </svg>
+      <span class="rating-platform-name">Yelp</span>
+    </div>
+    <div class="rating-stars-row">
+      <div class="rating-stars">
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      </div>
+      <span class="rating-score">5.0</span>
+      <span class="rating-count">(50+ reviews)</span>
+    </div>
+    <span class="rating-cta">See Reviews</span>
+  </a>
+
+</div>
 
 <!-- ===== SERVICES ===== -->
 <section class="services" id="services">
@@ -974,7 +1084,7 @@
     <div class="map-col">
       <iframe
         class="map-embed"
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3105.1!2d-77.0633!3d38.9027!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b7b648e7f8f4e7%3A0x1!2s3113+K+St+NW%2C+Washington%2C+DC+20007!5e0!3m2!1sen!2sus!4v1234567890"
+        src="https://www.google.com/maps?q=418+E+Raymond+Ave,+Alexandria,+VA+22301&output=embed"
         allowfullscreen=""
         loading="lazy"
         referrerpolicy="no-referrer-when-downgrade"
@@ -984,7 +1094,7 @@
       <div class="location-info">
         <div class="info-block">
           <h4>Address</h4>
-          <p>3113 K St NW<br>Washington, DC 20007</p>
+          <p>418 E. Raymond Ave<br>Alexandria, VA 22301</p>
         </div>
         <div class="info-block">
           <h4>Hours</h4>
@@ -1017,7 +1127,7 @@
     <ul class="footer-links">
       <li><a href="#services">Services</a></li>
       <li><a href="#reviews">Reviews</a></li>
-      <li><a href="#about">About</a></li>
+      <li><a href="about.html">About</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
     <span class="footer-copy">&copy; 2026 Georgetown Auto Service. All rights reserved.</span>
